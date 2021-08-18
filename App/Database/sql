@@ -1,0 +1,37 @@
+CREATE TABLE especialidades (
+    id SERIAL PRIMARY KEY NOT NULL,
+    descricao text   
+);
+CREATE TABLE estados (
+    id SERIAL PRIMARY KEY NOT NULL,
+    descricao text   
+);
+CREATE TABLE cidades (
+    id SERIAL PRIMARY KEY NOT NULL,
+    descricao text,
+    id_estado INTEGER REFERENCES estados (id)
+);
+CREATE TABLE medicamentos (
+    id SERIAL PRIMARY KEY NOT NULL,
+    descricao text,
+    fabricante text,
+    composicao text,
+    contraindicacoes text
+);
+CREATE TABLE turnos(
+    id SERIAL PRIMARY KEY NOT NULL,
+    descricao text
+);
+CREATE TABLE medicos(
+    id SERIAL PRIMARY KEY NOT NULL,
+    descricao text,
+    endereco text,
+    id_cidade INTEGER REFERENCES cidades (id),
+    contatos text,
+    formacao text
+);
+CREATE TABLE especialidades_medicos(
+    id SERIAL PRIMARY KEY NOT NULL,
+    id_medico INTEGER REFERENCES medicos (id),
+    id_especialidade INTEGER REFERENCES especialidades (id),
+);
