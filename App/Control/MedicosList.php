@@ -24,7 +24,11 @@ use Livro\Traits\EditTrait;
 use Livro\Widgets\Wrapper\DatagridWrapper;
 use Livro\Widgets\Wrapper\FormWrapper;
 use Livro\Widgets\Container\Panel;
-// testando merge a
+<<<<<<< HEAD
+// testando merges
+=======
+// teste merge
+>>>>>>> 3f77bedf0dbefd2a0e3ebe4f696d6b87b94f3ef8
 class MedicosList extends Page{
     private $form;
     private $datagrid;
